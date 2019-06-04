@@ -6,4 +6,4 @@ before_install:
   - docker build -t vladsereda/docker-k8s -f Dockerfile.dev .
 
 script:
-  - docker run vladsereda/docker-k8s npm run test -- --coverage
+  - docker run -e CI=true vladsereda/docker-k8s npm run test -- --coverage --watchAll=false
